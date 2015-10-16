@@ -44,11 +44,29 @@ module ESDB
     end
 
     def expansion_tag
-      expansion == 0 ? 'WoL' : 'HotS'
+      case expansion
+      when 0
+        return 'WoL'
+      when 1
+        return 'HotS'
+      when 2
+        return 'LotV'
+      else
+        return '????'
+      end
     end
 
     def expansion_long
-      expansion == 1 ? 'Heart of the Swarm' : 'Wings of Liberty'
+      case expansion
+      when 0
+        return 'Wings of Liberty'
+      when 1
+        return 'Heart of the Swarm'
+      when 2
+        return 'Legacy of the Void'
+      else
+        return 'Unrecognized Expansion'
+      end
     end
   end
 end
